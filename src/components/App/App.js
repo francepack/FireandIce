@@ -12,7 +12,6 @@ class App extends Component {
   componentDidMount = async () => {
     this.props.isLoading(true)
     let data = await getData()
-    console.log(data)
     this.props.storeData(data)
     this.props.isLoading(false)
   }

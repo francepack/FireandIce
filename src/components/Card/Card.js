@@ -2,17 +2,11 @@ import React, { Component } from 'react'
 import './card.css'
 
 export class Card extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-
-    }
-  }
 
   createCard = () => {
-    const seats = this.createItems(this.props.seats)
-    const titles = this.createItems(this.props.titles)
-    const weapons = this.createItems(this.props.ancestralWeapons)
+    const seats = this.createListItems(this.props.seats)
+    const titles = this.createListItems(this.props.titles)
+    const weapons = this.createListItems(this.props.ancestralWeapons)
     return(
       <div className='card'>
         <h2>{this.props.name}</h2>
@@ -29,15 +23,10 @@ export class Card extends Component {
     )
   }
 
-  createItems = (Arr) => {
-    return Arr.map(item => {
-      return(
-        <p>{item}</p>
-      )
-    })
+  createListItems = (Arr) => {
+    return Arr.map(item => <p>{item}</p>)
   }
  
-
   render() {
     let card = this.createCard(this.props)
     return(
