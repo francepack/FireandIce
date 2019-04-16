@@ -1,13 +1,8 @@
 import React, { Component } from 'react'
 import Card from '../Card/Card'
+import './cardArea.css'
 
 export class CardArea extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-
-    }
-  }
 
   makeCards = (data) => {
     let cards = data.map(item => {
@@ -21,7 +16,7 @@ export class CardArea extends Component {
   render() {
     let cards = this.makeCards(this.props.data)
     return(
-      <div>
+      <div className='card-container'>
         {cards}
       </div>
     )

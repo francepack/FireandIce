@@ -1,14 +1,11 @@
 import React from 'react'
+import './loading.css'
 
 export const Loading = () => {
-
-  const wolf = '../assets/wolf.gif'
   return(
-    <div>
-      <h3>Loading</h3>
+    <div className='loading'>
       <img src={require('../assets/wolf.gif')} />
+      <h3>Loading</h3>
     </div>
   )
 }
-
-// src={require('../assets/load.gif')}

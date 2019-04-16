@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './card.css'
 
 export class Card extends Component {
   constructor(props) {
@@ -9,32 +10,29 @@ export class Card extends Component {
   }
 
   createCard = () => {
-    let seats = this.createListItems(this.props.seats)
-    let titles = this.createListItems(this.props.titles)
-    let weapons = this.createListItems(this.props.ancestralWeapons)
+    const seats = this.createItems(this.props.seats)
+    const titles = this.createItems(this.props.titles)
+    const weapons = this.createItems(this.props.ancestralWeapons)
     return(
-      <div>
+      <div className='card'>
         <h2>{this.props.name}</h2>
         <p>Founded: {this.props.founded}</p>
-        <p>{this.props.coatOfArms}</p>
-        <p>{this.props.words}</p>
-        <ul>
-          {seats}
-        </ul>
-        <ul>
-          {titles}
-        </ul>
-        <ul>
-          {weapons}
-        </ul>
+        <p>Coat of Arms: {this.props.coatOfArms}</p>
+        <p>House Words: {this.props.words}</p>
+        <h4>Seats</h4>
+        {seats}
+        <h4>Titles</h4>
+        {titles}
+        <h4>Ancestral Weapons</h4>
+        {weapons}
       </div>
     )
   }
 
-  createListItems = (Arr) => {
-    Arr.map(item => {
+  createItems = (Arr) => {
+    return Arr.map(item => {
       return(
-        <li>{item}</li>
+        <p>{item}</p>
       )
     })
   }
@@ -43,7 +41,7 @@ export class Card extends Component {
   render() {
     let card = this.createCard(this.props)
     return(
-      <div>
+      <div className='card-area'>
         {card}
       </div>
     )

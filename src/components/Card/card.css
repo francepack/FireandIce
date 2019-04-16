@@ -1,0 +1,11 @@
+.card-area {
+  border-radius: 15px;
+  border: 3px solid black;
+  width: 30%;
+}
+
+h4 {
+  margin: 0;
+  padding: 0;
+  text-decoration: underline;
+}
