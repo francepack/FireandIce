@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import CardArea from '../CardArea/CardArea'
 
 class App extends Component {
 
@@ -12,9 +13,10 @@ class App extends Component {
           <h2>Welcome to Westeros</h2>
         </div>
         <div className='Display-info'>
+          <CardArea />
         </div>
       </div>
-    );
+    )
   }
 }
 
