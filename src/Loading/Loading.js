@@ -1,9 +1,14 @@
 import React from 'react'
-import '../assets/wolf.gif'
 
 export const Loading = () => {
 
+  const wolf = '../assets/wolf.gif'
   return(
-    <h3>Loading</h3>
+    <div>
+      <h3>Loading</h3>
+      <img src={require('../assets/wolf.gif')} />
+    </div>
   )
 }
+
+// src={require('../assets/load.gif')}

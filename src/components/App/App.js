@@ -33,12 +33,12 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
+export const mapStateToProps = (state) => ({
   data: state.data,
   loading: state.isLoading
 })
 
-const mapDispatchToProps = (dispatch) => ({
+export const mapDispatchToProps = (dispatch) => ({
   storeData: (data) => dispatch(storeData(data)),
   isLoading: (bool) => dispatch(isLoading(bool))
 })
