@@ -9,15 +9,23 @@ export class CardArea extends Component {
     }
   }
 
-  findCards = () => {
-
+  makeCards = (data) => {
+    let cards = data.map(item => {
+      return(
+        <Card {...item}/>
+      )
+    })
+    return cards
   }
 
   render() {
+    let cards = this.makeCards(this.props.data)
     return(
       <div>
-        <p>container</p>
+        {cards}
       </div>
     )
   }
 }
+
+export default CardArea

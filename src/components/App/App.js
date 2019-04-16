@@ -1,9 +1,21 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+import { connect } from 'react-redux'
+import { storeData, isLoading } from '../../actions/index'
 import './App.css';
+import { Loading } from '../../Loading/Loading'
 import CardArea from '../CardArea/CardArea'
+import { getData } from '../../api/apiCalls'
 
 class App extends Component {
+
+  componentDidMount = async () => {
+    this.props.isLoading(true)
+    let data = await getData()
+    console.log(data)
+    this.props.storeData(data)
+    this.props.isLoading(false)
+  }
 
   render() {
     return (
@@ -13,11 +25,22 @@ class App extends Component {
           <h2>Welcome to Westeros</h2>
         </div>
         <div className='Display-info'>
-          <CardArea />
+          {this.props.loading && <Loading />}
+          <CardArea data={this.props.data}/>
         </div>
       </div>
     )
   }
 }
 
-export default App;
+const mapStateToProps = (state) => ({
+  data: state.data,
+  loading: state.isLoading
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  storeData: (data) => dispatch(storeData(data)),
+  isLoading: (bool) => dispatch(isLoading(bool))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
