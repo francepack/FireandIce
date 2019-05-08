@@ -13,3 +13,5 @@ More info about this challenge can be found here: [Fire and Ice](https://github.
 ### Screenshot
 
 Much of the css was built in to the boiler-plate we started with, but I did want to include an image of the finished project to give an idea of what this challenge entailed:
+
+<img width="1268" alt="Screen Shot 2019-05-07 at 8 11 41 PM" src="https://user-images.githubusercontent.com/44355328/57344466-92e80d80-7104-11e9-9c96-8fe76dbdb6e1.png">
